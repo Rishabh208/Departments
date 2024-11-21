@@ -10,6 +10,6 @@ public record DepartmentRequest(
     @NotEmpty(message = "Department should be present")
     @NotBlank(message = "Department should be present")
     @JsonProperty("department_name")
-    String departmentName
+    String department_name
 ){
 }

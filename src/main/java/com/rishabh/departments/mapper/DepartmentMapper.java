@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class DepartmentMapper {
     public Department toEntity(DepartmentRequest request) {
         return Department.builder()
-                .departmentName(request.departmentName())
+                .department_name(request.department_name())
                 .build();
     }
 }
