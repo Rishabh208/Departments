@@ -32,23 +32,23 @@ public class DepartmentService {
         return departments;
     }
 
-    public Department getDepartmentById(int id) {
-        Optional<Department> department=repo.findById((long) id);
+    public Department getDepartmentById(long id) {
+        Optional<Department> department=repo.findById(id);
         return department.orElse(null);
     }
 
-    public Department updateDepartment(int id, Department updatedDepartment) {
-        if(repo.existsById((long) id)){
-            updatedDepartment.setDepartment_id((long) id);
+    public Department updateDepartment(long id, Department updatedDepartment) {
+        if(repo.existsById(id)){
+            updatedDepartment.setDepartment_id(id);
             repo.save(updatedDepartment);
         }
         return updatedDepartment;
 
     }
 
-    public String deleteDepartment(int id){
-        if(repo.existsById((long) id)){
-            repo.deleteById((long) id);
+    public String deleteDepartment(long id){
+        if(repo.existsById(id)){
+            repo.deleteById(id);
             return "Deleted";
         }
         return "Not Found";
